@@ -152,14 +152,6 @@ function App() {
     postWebhook();
   };
 
-  // Clear webhook state helper (if you need to manually reset somewhere else)
-  const resetWebhookState = () => {
-    setSelectedUrl(null);
-    setWebhookImage(null);
-    setWebhookLoading(false);
-    setWebhookNote(null);
-  };
-
   const addToast = (message: string, type: ToastMessage['type'] = 'info') => {
     const id = Date.now().toString();
     setToasts(prev => [...prev, { id, message, type }]);
@@ -265,7 +257,7 @@ function App() {
                   <div className="mt-3">
                     <img
                       src={webhookImage}
-                      alt="Webhook image"
+                      alt="Webhook preview"
                       className="w-full max-h-64 object-contain rounded-lg border border-gray-200 dark:border-gray-700"
                     />
                     <div className="mt-3 flex gap-2">
