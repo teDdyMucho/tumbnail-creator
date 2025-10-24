@@ -331,4 +331,28 @@ function App() {
           <div className="relative z-50 max-w-5xl w-full px-4">
             <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-3 sm:p-4">
               <div className="flex justify-between items-center mb-2">
-                <h2 id="image-modal-title" className="text-sm font-medium text-gray-
+                <h2 id="image-modal-title" className="text-sm font-medium text-gray-700 dark:text-gray-300">Image Preview</h2>
+                <button
+                  className="btn-secondary py-1 px-2"
+                  onClick={closeImageModal}
+                  aria-label="Close image preview"
+                >
+                  Close
+                </button>
+              </div>
+              <div className="max-h-[80vh] overflow-auto">
+                <img
+                  src={webhookImage}
+                  alt="Full size preview"
+                  className="mx-auto max-h-[75vh] w-auto object-contain rounded"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
